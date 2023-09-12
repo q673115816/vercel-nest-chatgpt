@@ -4,15 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preinstall": "node ./scripts/preinstall.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "",
-    "start:frontend": "",
-    "start:backend": ""
+    "start": "pnpm --parallel -r start",
+    "start:frontend": "pnpm run start -C frontend",
+    "start:backend": "pnpm run start -C backend",
+    "update": "pnpm -r up --latest",
+    "clean": "pnpm -r clean"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pm2": "^5.3.0"
-  }
+    "next": "13.4.19",
+    "pm2": "^5.3.0",
+    "pnpm": "latest"
+  },
+  "packageManager": "pnpm@7.0.0"
 }
